@@ -1,0 +1,296 @@
+сbody {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.header {
+    background: url('11.jpg') no-repeat center center;
+    background-size: cover;
+    color: white;
+    min-height: 400px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    text-align: center;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 3em;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 30px;
+}
+
+.menu {
+    margin: 20px 0;
+}
+
+.menu__item {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: color 0.3s;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.menu__item:hover {
+    color: #f1c40f;
+}
+
+.main {
+    flex: 1;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.about {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+}
+
+.section-title {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+}
+
+.tour-blocks {
+    margin-bottom: 40px;
+}
+
+.tour-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.tour-block {
+    border-radius: 8px;
+    padding: 30px;
+    margin-bottom: 20px;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+}
+
+.tour-block::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 1;
+}
+
+.block-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+
+.tour-block h3 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.tour-block p {
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+.beach {
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('22(1).jpg');
+}
+
+.excursion {
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('33.jpeg');
+}
+
+.active {
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('44.jpg');
+}
+
+.footer {
+    background: #2c3e50;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content {
+    margin-bottom: 15px;
+}
+
+.footer a {
+    color: #f1c40f;
+    text-decoration: none;
+}
+
+.copyright {
+    font-size: 0.9em;
+    color: #ccc;
+}
+
+.country-description {
+    margin-bottom: 40px;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+}
+
+.country-description h3 {
+    color: #2c3e50;
+    margin-top: 0;
+}
+
+.country-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Стили для формы обратной связи */
+.feedback-form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.form-group textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.submit-btn {
+    background-color: #f1c40f;
+    color: #2c3e50;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #e67e22;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .header-content {
+        padding: 10px;
+    }
+    
+    .logo h1 {
+        font-size: 2em;
+    }
+    
+    .menu__item {
+        display: block;
+        margin: 10px 0;
+    }
+    
+    .tour-grid {
+        display: block;
+    }
+    
+    .tour-block {
+        min-height: 150px;
+        margin-bottom: 15px;
+    }
+    
+    .country-image {
+        height: 200px;
+    }
+    
+    .feedback-form-container {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo h1 {
+        font-size: 1.5em;
+    }
+    
+    .header {
+        min-height: 300px;
+    }
+    
+    .tour-block h3 {
+        font-size: 1.5em;
+    }
+    
+    .tour-block p {
+        font-size: 1em;
+    }
+}

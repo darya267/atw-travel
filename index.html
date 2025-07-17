@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>ATW - Around The World</title>
+    <link rel="stylesheet" type="text/css" href="22.css">
+    <!-- PWA мета-теги -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#f1c40f">
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="header-overlay"></div>
+            <div class="header-content">
+                <div class="logo">
+                    <h1>Around The World</h1>
+                </div>
+                <nav class="menu">
+                    <a class="menu__item" href="index.html">Главная</a>
+                    <a class="menu__item" href="feedback1.html">Обратная связь</a>
+                    <a class="menu__item" href="#contacts">Контакты</a>
+                </nav>
+            </div>
+        </header>
+        
+        <main class="main">
+            <section class="about">
+                <h2>Приветствуем вас в путеводителе "Around The World"!</h2>
+                <p>Путешествия — это язык, который понимает сердце!</p>
+                <p>Мы предлагаем профессиональный подход и индивидуальные решения, чтобы каждый ваш отпуск стал незабываемым!</p>
+                <p>Путеводитель Around The World поможет вам в планировании поездки и сделает её более насыщенной!</p>
+            </section>
+
+            <section class="tour-blocks" id="tours">
+                <h2 class="section-title">Направления отдыха</h2>
+                
+                <div class="tour-grid">
+                    <a href="pl1.html" class="tour-block beach">
+                        <div class="block-content">
+                            <h3>Пляжный отдых</h3>
+                            <p>Идеальные места для расслабления на побережье</p>
+                        </div>
+                    </a>
+                    
+                    <a href="eks1.html" class="tour-block excursion">
+                        <div class="block-content">
+                            <h3>Экскурсионные туры</h3>
+                            <p>Погружение в культуру и историю разных стран</p>
+                        </div>
+                    </a>
+                    
+                    <a href="act1.html" class="tour-block active">
+                        <div class="block-content">
+                            <h3>Активный отдых</h3>
+                            <p>Экстремальные приключения для смелых путешественников</p>
+                        </div>
+                    </a>
+                </div>
+            </section>
+        </main>
+        
+        <footer class="footer" id="contacts">
+            <div class="footer-content">
+                <p>Телефон:+7(900)-111-23-32</p>
+                <p>Email: atw.travel@gmail.ru</p>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- Регистрация Service Worker -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/serviceworker.js')
+                    .then(reg => console.log('Service Worker зарегистрирован'))
+                    .catch(err => console.log('Ошибка регистрации: ', err));
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>ATW - Обратная связь</title>
+    <link rel="stylesheet" type="text/css" href="22.css">
+    <!-- PWA мета-теги -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#f1c40f">
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="header-overlay"></div>
+            <div class="header-content">
+                <div class="logo">
+                    <h1>Around The World</h1>
+                </div>
+                <nav class="menu">
+                    <a class="menu__item" href="index.html">Главная</a>
+                    <a class="menu__item" href="feedback1.html">Обратная связь</a>
+                    <a class="menu__item" href="#contacts">Контакты</a>
+                </nav>
+            </div>
+        </header>
+        
+        <main class="main">
+            <section>
+                <h2 class="section-title">Обратная связь</h2>
+                <div class="feedback-form-container">
+                    <p>Пожалуйста, оставьте ваши вопросы и пожелания:</p>
+                    <form name="feedback_form" method="post" action="feedback.php">
+                        <div class="form-group">
+                            <label for="sirname">Ваше имя:</label>
+                            <input type="text" id="sirname" name="sirname" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Ваш Email:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Сообщение:</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" name="send" class="submit-btn">Отправить сообщение</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+        
+        <footer class="footer" id="contacts">
+            <div class="footer-content">
+                <p>Телефон: +7(900)-111-23-32</p>
+                <p>Email: atw.travel@gmail.ru</p>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- Регистрация Service Worker -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/serviceworker.js')
+                    .then(reg => console.log('Service Worker зарегистрирован'))
+                    .catch(err => console.log('Ошибка регистрации: ', err));
+            });
+        }
+    </script>
+</body>
+</html>

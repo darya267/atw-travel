@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>ATW - Экскурсионные туры</title>
+    <link rel="stylesheet" type="text/css" href="22.css">
+    <!-- PWA мета-теги -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#f1c40f">
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="header-overlay"></div>
+            <div class="header-content">
+                <div class="logo">
+                    <h1>Around The World</h1>
+                </div>
+                <nav class="menu">
+                    <a class="menu__item" href="index.html">Главная</a>
+                    <a class="menu__item" href="feedback1.html">Обратная связь</a>
+                    <a class="menu__item" href="#contacts">Контакты</a>
+                </nav>
+            </div>
+        </header>
+        
+        <main class="main">
+            <section>
+                <h2 class="section-title">Экскурсионные туры</h2>
+                
+                <img src="эк1.jpg" 
+                     alt="Италия" class="country-image">
+                <div class="country-description">
+                    <h3>Италия</h3>
+                    <p>Италия - страна с богатейшим культурным наследием, где каждый город представляет собой музей под открытым небом.</p> 
+                    <p>Рим поразит вас Колизеем и Ватиканом, Флоренция - галереей Уффици и собором Санта-Мария-дель-Фьоре, Венеция - романтичными каналами и площадью Сан-Марко.<p/> 
+                    <p>Обязательно попробуйте настоящую итальянскую кухню в местных тратториях. Лучшее время для экскурсионного тура - весна (апрель-май) и осень (сентябрь-октябрь), когда нет изнуряющей жары и толп туристов.</p>
+                </div>
+                
+                <img src="экс2(1).jpg" 
+                     alt="Франция" class="country-image">
+                <div class="country-description">
+                    <h3>Франция</h3>
+                    <p>Франция предлагает невероятное разнообразие экскурсионных маршрутов.</p>
+                    <p>Париж с Эйфелевой башней, Лувром и Нотр-Дамом; замки Луары; средневековый Мон-Сен-Мишель; винодельческие регионы Бордо и Бургундия; лавандовые поля Прованса - это лишь малая часть того, что можно увидеть. Особый шарм французским городам придают уютные кафе и булочные с ароматными круассанами.</p>
+                    <p>Для экскурсий идеально подходят месяцы май-июнь и сентябрь, когда погода наиболее комфортна.</p>
+                </div>
+                
+                <img src="экс3.jpg" 
+                     alt="Египет" class="country-image">
+                <div class="country-description">
+                    <h3>Египет</h3>
+                    <p>Египет - это путешествие вглубь тысячелетий к истокам человеческой цивилизации.</p> 
+                    <p>Величественные пирамиды Гизы, загадочный Сфинкс, храмы Луксора и Карнака, гробницы Долины Царей - все это производит неизгладимое впечатление. Круиз по Нилу позволит увидеть древние памятники в комфортных условиях.</p> 
+                    <p>Для экскурсионных туров лучше выбирать период с октября по апрель, когда температура воздуха днем составляет 25-30°C, а не поднимается до 40°C как летом.</p>
+                </div>
+            </section>
+        </main>
+        
+        <footer class="footer" id="contacts">
+            <div class="footer-content">
+                <p>Телефон:+7(900)-111-23-32</p>
+                <p>Email: atw.travel@gmail.ru</p>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- Регистрация Service Worker -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/serviceworker.js')
+                    .then(reg => console.log('Service Worker зарегистрирован'))
+                    .catch(err => console.log('Ошибка регистрации: ', err));
+            });
+        }
+    </script>
+</body>
+</html>
