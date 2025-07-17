@@ -22,6 +22,7 @@
                     <a class="menu__item" href="feedback1.html">Обратная связь</a>
                     <a class="menu__item" href="#contacts">Контакты</a>
                 </nav>
+                <button id="installButton" style="display: none; background: #f1c40f; color: #2c3e50; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; margin-top: 10px; font-weight: bold;">Установить приложение</button>
             </div>
         </header>
         
@@ -78,6 +79,34 @@
                     .catch(err => console.log('Ошибка регистрации: ', err));
             });
         }
+
+        // Код для кнопки установки
+        let deferredPrompt;
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            const installButton = document.getElementById('installButton');
+            installButton.style.display = 'block';
+            
+            installButton.addEventListener('click', () => {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    if (choiceResult.outcome === 'accepted') {
+                        console.log('Пользователь принял установку');
+                    } else {
+                        console.log('Пользователь отклонил установку');
+                    }
+                    deferredPrompt = null;
+                    installButton.style.display = 'none';
+                });
+            });
+        });
+
+        window.addEventListener('appinstalled', () => {
+            console.log('Приложение успешно установлено');
+            document.getElementById('installButton').style.display = 'none';
+        });
     </script>
 </body>
 </html>
